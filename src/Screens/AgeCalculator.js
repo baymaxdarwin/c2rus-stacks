@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import Icon from 'react-native-vector-icons/Fontisto';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
 
 const AgeCalculator = () => {
   const [date, setDate] = useState(new Date());

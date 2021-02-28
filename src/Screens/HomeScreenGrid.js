@@ -11,16 +11,19 @@ import {
   Dimensions,
 } from 'react-native';
 import {SectionGrid} from 'react-native-super-grid';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 let ScreenWidth = Dimensions.get('window').width;
 let ScreenHeight = Dimensions.get('window').height;
 
 import AgeCalculator from './AgeCalculator';
+import RollDice from './RollDice';
 
 const ModelSelector = (item) => {
   if (item && item.name === 'AgeCalculator') {
     return <AgeCalculator />;
+  } else if (item && item.name === 'RollDice') {
+    return <RollDice />;
   } else {
     return (
       <View>
@@ -36,14 +39,21 @@ export default function HomeScreenGrid() {
 
   const [items, setItems] = React.useState([
     {
-      displayName: 'Age Calculator',
       code: '#1abc9c',
-      name: 'AgeCalculator',
-      id: 1,
+      displayName: 'Age Calculator',
       icon: 'calculator',
       iconSize: 30,
+      id: 1,
+      name: 'AgeCalculator',
     },
-    {displayName: 'Spin Wheel', code: '#2ecc71', id: 2},
+    {
+      code: '#2ecc71',
+      displayName: 'Roll Dice',
+      icon: 'dice',
+      iconSize: 30,
+      id: 2,
+      name: 'RollDice',
+    },
     {displayName: '3D Figure', code: '#3498db', id: 3},
     {displayName: 'TBD', code: '#9b59b6', id: 4},
     {displayName: 'TBD', code: '#34495e', id: 5},
@@ -92,7 +102,7 @@ export default function HomeScreenGrid() {
           <View style={styles.modalView}>
             <View style={{alignSelf: 'flex-end'}}>
               <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-                <Icon name="close" size={50} />
+                <Icon name="window-close" size={40} />
               </TouchableOpacity>
             </View>
             {ModelSelector(currentModel)}
