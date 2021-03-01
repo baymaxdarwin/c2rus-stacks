@@ -8,6 +8,8 @@ target 'c2ras' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
   target 'c2rasTests' do
     inherit! :complete
     # Pods for testing

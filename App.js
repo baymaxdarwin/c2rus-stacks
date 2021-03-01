@@ -24,6 +24,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './src/Screens/HomeScreen';
+import {WebView} from 'react-native-webview';
 
 const App = () => {
   return (
@@ -31,6 +32,10 @@ const App = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={{flex: 1}}>
         <HomeScreen />
+        {/* <WebView
+          source={{uri: 'https://blog.jscrambler.com'}}
+          style={{marginTop: 20}}
+        /> */}
       </SafeAreaView>
     </>
   );

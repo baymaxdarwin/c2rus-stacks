@@ -18,12 +18,15 @@ let ScreenHeight = Dimensions.get('window').height;
 
 import AgeCalculator from './AgeCalculator';
 import RollDice from './RollDice';
+import WebScreen from './WebScreen';
 
 const ModelSelector = (item) => {
   if (item && item.name === 'AgeCalculator') {
     return <AgeCalculator />;
   } else if (item && item.name === 'RollDice') {
     return <RollDice />;
+  } else if (item && item.name === 'WebView') {
+    return <WebScreen />;
   } else {
     return (
       <View>
@@ -53,6 +56,14 @@ export default function HomeScreenGrid() {
       iconSize: 30,
       id: 2,
       name: 'RollDice',
+    },
+    {
+      code: '#16a085',
+      displayName: 'Web View',
+      icon: 'desktop',
+      iconSize: 30,
+      id: 2,
+      name: 'WebView',
     },
     {displayName: '3D Figure', code: '#3498db', id: 3},
     {displayName: 'TBD', code: '#9b59b6', id: 4},
