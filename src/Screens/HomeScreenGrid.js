@@ -19,6 +19,7 @@ let ScreenHeight = Dimensions.get('window').height;
 import AgeCalculator from './AgeCalculator';
 import RollDice from './RollDice';
 import WebScreen from './WebScreen';
+import TicTocToe from './TicTocToe';
 
 const ModelSelector = (item) => {
   if (item && item.name === 'AgeCalculator') {
@@ -27,6 +28,8 @@ const ModelSelector = (item) => {
     return <RollDice />;
   } else if (item && item.name === 'WebView') {
     return <WebScreen />;
+  } else if (item && item.name === 'TicTocToe') {
+    return <TicTocToe />;
   } else {
     return (
       <View>
@@ -65,7 +68,14 @@ export default function HomeScreenGrid() {
       id: 2,
       name: 'WebView',
     },
-    {displayName: '3D Figure', code: '#3498db', id: 3},
+    {
+      displayName: 'Tic Tok Toe',
+      code: '#3498db',
+      icon: 'boxes',
+      iconSize: 30,
+      id: 3,
+      name: 'TicTocToe',
+    },
     {displayName: 'TBD', code: '#9b59b6', id: 4},
     {displayName: 'TBD', code: '#34495e', id: 5},
     {displayName: 'TBD', code: '#16a085', id: 6},
